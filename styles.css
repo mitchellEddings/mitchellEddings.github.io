@@ -1,0 +1,194 @@
+/* Author: Mitchell Eddings
+Project Name: Online Profile (Class Assignment) 
+page name: styles.css*/
+
+:root{
+    --blue: #06A2C2;
+    --dark-gray: #636564;
+    --light-gray: #C5D8D1;
+    --shadow: 0 1px 10px rgba(104, 104, 104, 0.25);
+}
+
+/* #region nav stuff */
+.navbar{
+    background-color: var(--blue);
+}
+.nav-link:hover{
+    color: var(--light-gray);
+}
+/* #endregion */
+
+.container{
+    
+    margin: auto;
+}
+ul{
+    list-style: none;
+    
+}
+.row {
+    margin: 2rem;
+    padding: 1rem;
+    text-align: right;
+}
+
+/* Don't know if I'll use all of these, but just in case!! */
+.col,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-10,.col-11{
+    display: flex;
+    align-items: center; 
+    text-align: center;
+  justify-content: center;
+  
+}
+
+
+/* #region text */
+ h2{
+    /* text-align: center; */
+    margin-top: 1.3rem;
+    padding: 0.5rem 1rem;
+    
+}
+h3{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.date{
+    text-decoration: underline;
+    text-decoration-color: var(--dark-gray);
+    text-decoration-thickness: 2px;
+}
+p{
+    font-size: 1.15rem;
+    margin: 0.25rem;
+    padding: 0.25rem;
+}
+/* #endregion */
+
+/* #region fontawesome related */
+i{
+    color:#06A2C2;
+    font-size: 2rem;
+}
+/* #endregion */
+
+/* #region image related */
+img{
+    margin: 0rem 2rem;
+    
+}
+.aboutMEimg img{
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+}
+.imgLtFloat{
+    float: left;
+    
+}
+.clearFloat{
+    clear: both;
+}
+/* #endregion */
+
+.item{
+   display: grid; 
+}
+/* #region about me related */
+#WhoAmI {
+    display: grid;
+    grid-template-areas: 
+    'img txt txt txt'
+    'img txt txt txt';
+    margin:1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+
+   
+}
+.aboutMEimg{
+    grid-area: img;
+}
+.aboutMEtxt{
+    grid-area: txt;
+}
+/* #endregion */
+
+/* #region Experience and Education related */
+/* Each section uses the same div classes */
+.xp{
+    display: grid;
+    grid-template-areas: 
+    'grayTxtBox grayTxtBox txt'
+    'grayTxtBox grayTxtBox txt';
+    margin:1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    box-shadow: var(--shadow)
+}
+.grayTxt{
+    grid-area: grayTxtBox;
+    color: var(--dark-gray);
+    min-width: 20rem;
+    border-radius: 5px;
+    margin: 1rem;
+    padding: 0.5rem;
+}
+.grayTxt b{
+    color: var(--blue);
+}
+.txt{
+    grid-area: txt;
+    margin: 1rem 0 1rem 15rem;
+    padding: 0.5rem;
+    text-align: right;
+}
+
+/* #endregion */
+
+
+/* #region skills related */
+.sklz{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: var(--shadow)
+}
+.skil{
+    text-align: center;
+}
+/* #endregion */
+
+a{
+    color: var(--dark-gray);
+}
+a:hover{
+    color: var(--light-gray);
+}
+
+
+/* #region media queries...yayyyyy */
+@media(max-width: 1420px){
+    .xp{
+        grid-template-areas: 'grayTxtBox' 'txt';
+    }
+    .txt{
+        margin: 1rem 5rem 1rem 1rem;
+        text-align: left;
+    }
+    .sklz{
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+       
+    }
+}
+@media(max-width: 1000px){
+    img{
+        display: none;
+        
+    }
+    #WhoAmI{
+        text-align: center;
+    }
+}
+/* #endregion */
